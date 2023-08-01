@@ -84,7 +84,7 @@ const DeleteProduct = async (req, res) => {
 
 }
 
-const ProductByBrand = async (req, res) => {
+const ProductByName = async (req, res) => {
     const { name } = req.params;
     try {
       await connect(process.env.MONGO_URL)
@@ -119,7 +119,7 @@ const ProductByCategory = async (req, res) => {
 }
 
 
-module.exports = { AddProduct, AllProducts, UpdateProduct, DeleteProduct,ProductByBrand,ProductByCategory}
+module.exports = { AddProduct, AllProducts, UpdateProduct, DeleteProduct,ProductByName,ProductByCategory}
 
 
 
