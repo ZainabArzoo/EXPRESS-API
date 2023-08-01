@@ -4,7 +4,7 @@ const { AddBrand,AllBrands,BrandById,BrandByName,UpdateBrand,DeleteBrand } = req
 
 
 router.post('/addbrand', AddBrand)
-router.delete('/Allbrands', AllBrands)
+router.get('/allbrands', AllBrands)
 router.get('/brandbyid', BrandById)
 router.get('/brandbyname/:brand', BrandByName)
 router.put('/updatebrand', UpdateBrand)
