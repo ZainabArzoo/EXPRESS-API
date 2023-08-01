@@ -101,6 +101,23 @@ const ProductByName = async (req, res) => {
   
 }
 
+const ProductByBrand = async (req, res) => {
+    const { brand } = req.params;
+    try {
+      await connect(process.env.MONGO_URL)
+      const products = await Product.find({ brand })
+      res.json({
+        products
+      })
+    }
+    catch (error) {
+      res.status(404).json({
+        message: error.message
+      })
+    }
+  
+}
+
 const ProductByCategory = async (req, res) => {
     const { category } = req.params;
     try {
@@ -119,7 +136,7 @@ const ProductByCategory = async (req, res) => {
 }
 
 
-module.exports = { AddProduct, AllProducts, UpdateProduct, DeleteProduct,ProductByName,ProductByCategory}
+module.exports = { AddProduct, AllProducts, UpdateProduct, DeleteProduct,ProductByName,ProductByCategory,ProductByBrand}
 
 
 
