@@ -85,10 +85,10 @@ const DeleteProduct = async (req, res) => {
 }
 
 const ProductByBrand = async (req, res) => {
-    const { brand } = req.params;
+    const { name } = req.params;
     try {
       await connect(process.env.MONGO_URL)
-      const products = await Product.find({ brand })
+      const products = await Product.find({ name })
       res.json({
         products
       })
