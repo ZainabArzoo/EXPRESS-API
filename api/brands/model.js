@@ -4,8 +4,8 @@ const BrandsSchema = new Schema({
 
     Brandname : {
         type : String,
-        required : true,
         unique : true,
+        required : true,
     },
     
     Brandimage : {

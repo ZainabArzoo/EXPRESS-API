@@ -31,6 +31,23 @@ const AddCategory = async (req, res) => {
 
 }
 
+const AllCategories = async (req, res) => {
+
+    try {
+        await connect(process.env.MONGO_URL)
+        const Categories = await category.find()
+        res.json({
+            Categories
+        })
+    }
+    catch (error) {
+        res.status(404).json({
+            message: error.message
+        })
+    }
+
+}
+
 const CategoryByName = async (req, res) => {
     const { Categoryname } = req.params;
     try {
@@ -106,7 +123,7 @@ const DeleteCategory = async (req, res) => {
 }
 
 
-module.exports = {AddCategory,CategoryById,CategoryByName,UpdateCategory,DeleteCategory}
+module.exports = {AddCategory,AllCategories,CategoryById,CategoryByName,UpdateCategory,DeleteCategory}
 
 
 

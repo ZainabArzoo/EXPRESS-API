@@ -11,5 +11,4 @@ router.delete('/deleteuser', DeleteUser)
 router.put('/updateuser', UpdateUser)
 
 
-
 module.exports = router
